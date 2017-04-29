@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+
+
+{% block content %}
+
+<div style="height:80px"></div>
+<div class="contain">
+<form method="POST">
+    <textarea name="comment" style="width:100%" rows=4 placeholder="在这里留言"></textarea>
+    <br>
+    <button type="submit" style="float:right">发布留言!</button>
+    <input type="text" style="float:right " class="form-control" name="author" placeholder="输入您的昵称或直接留空">
+</form>
+<br>
+<br>
+
+
+{% if session.get('log') %}
+<div class="cconfirmDel" id="commdel">
+<br><h4>确认删除?</h4><br>
+<button class="sm" id="codel">删除</button>
+<button class="sm" id="coqui">不了</button>
+</div>
+{% endif %}
+
+
+
+{%- for ass in range(4) %}
+
+<div class="colm">
+
+{%- for ct in tem[ass::4] %}
+<div class="well memo">
+<p class="xxs">{{ ct[2] }}</p>
+<!--<p class="xxs r">{{ ct[1] }}</p>-->
+{% if session.get('log') and ct[1] != "" %}
+<button class="sm cd" style="float:right" pid="{{ ct[3] }}">删除</button>
+{% endif %}
+<hr>
+<pre>{{ ct[0] }}</pre>
+
+</div>
+{%- endfor %}
+
+</div>
+{%- endfor %}
+
+</div>
+
+
+{% endblock %}
