@@ -5,7 +5,7 @@ from sqlalchemy.orm import sessionmaker
 from sqlalchemy.orm import scoped_session
 from sqlalchemy.ext.declarative import declarative_base
 
-DB_CONNET_STRING = 'mysql://root:2316678@localhost/yangqh_db'
+DB_CONNET_STRING = 'mysql://root:2316678@localhost/yangqh_db?charset=utf8mb4'
 
 Base = declarative_base()
 Session = scoped_session(sessionmaker())
