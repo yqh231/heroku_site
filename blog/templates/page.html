@@ -19,7 +19,15 @@
     <div class="disp">Posted on : {{ result.date }}</div>
     <div class="finu">
     <img src="/static/img/2.jpg" class="fil" />
-    <div class="fil">{{ result.file }}</div>
+     {% if result.file == 1 %}
+            <div class="fil">Note</div>
+        {% endif %}
+        {% if result.file == 2 %}
+            <div class="fil">Project</div>
+        {% endif %}
+        {% if result.file == 3 %}
+            <div class="fil">Programming</div>
+        {% endif %}
     </div>
     <pre>{{ result.abstract|safe }}</pre>
     <div class="ltag">
