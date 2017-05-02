@@ -17,8 +17,8 @@
         <label>分类</label>
         <select name="file" style="width:80px">
         <option value =1 {% if curArti.file==1 %}selected="selected"{% endif %}>Note</option>
-        <option value =3 {% if curArti.file==3 %}selected="selected"{% endif %}>Projects</option>
-        <option value =4 {% if curArti.file==4 %}selected="selected"{% endif %}>Programming</option>
+        <option value =2 {% if curArti.file==2 %}selected="selected"{% endif %}>Projects</option>
+        <option value =3 {% if curArti.file==3 %}selected="selected"{% endif %}>Programming</option>
         </select>
         <label>标签</label>
         <input type="text" name="tags" style="width:60%" value="{{ curArti.tag }}">
