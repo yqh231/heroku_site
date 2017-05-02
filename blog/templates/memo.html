@@ -31,13 +31,13 @@
 
 {%- for ct in tem[ass::4] %}
 <div class="well memo">
-<p class="xxs">{{ ct[2] }}</p>
-<!--<p class="xxs r">{{ ct[1] }}</p>-->
-{% if session.get('log') and ct[1] != "" %}
-<button class="sm cd" style="float:right" pid="{{ ct[3] }}">删除</button>
+<p class="xxs">{{ ct.author }}</p>
+<!--<p class="xxs r">{{ ct.date }}</p>-->
+{% if session.get('log') and ct.date != "" %}
+<button class="sm cd" style="float:right" pid="{{ ct.id }}">删除</button>
 {% endif %}
 <hr>
-<pre>{{ ct[0] }}</pre>
+<pre>{{ ct.content }}</pre>
 
 </div>
 {%- endfor %}

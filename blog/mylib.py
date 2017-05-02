@@ -121,7 +121,8 @@ class comment:
         query_para = (
             tbl_comm.author,
             tbl_comm.id,
-            tbl_comm.blog
+            tbl_comm.blog,
+            tbl_comm.content
         )
         query_result = self.session.query(*query_para).order_by(tbl_comm.id.desc())
         temp = query_result.all() or []
